@@ -1,4 +1,11 @@
 ### Eclipse/STS ###
+HELP.md
+target/
+!.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
+
+### STS ###
 .apt_generated
 .classpath
 .factorypath
@@ -10,6 +17,7 @@
 ### IntelliJ IDEA ###
 .idea/
 out/
+.idea
 *.iws
 *.iml
 *.ipr
@@ -26,3 +34,5 @@ build/
 
 ### VS Code ###
 .vscode/
+
+**/secrets.properties
