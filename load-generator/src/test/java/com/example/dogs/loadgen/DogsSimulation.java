@@ -18,8 +18,8 @@ public class DogsSimulation extends Simulation {
 	final Duration duration = Duration.ofMinutes(2);
 	final int usersPerSec = 5;
 
-	final HttpProtocolBuilder httpProtocol = http.baseUrl("http://localhost:8080")
-		.basicAuth("user", "password")
+	final HttpProtocolBuilder httpProtocol = http.baseUrl("http://localhost:8081")
+		// .basicAuth("user", "password")
 		.contentTypeHeader(ApplicationJson())
 		.acceptHeader(ApplicationJson());
 
