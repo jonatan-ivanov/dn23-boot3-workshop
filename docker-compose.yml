@@ -7,6 +7,7 @@ services:
     restart: unless-stopped
     extra_hosts: ['host.docker.internal:host-gateway']
     environment:
+      - POSTGRES_DB=dog-db
       - POSTGRES_USER=dog
       - POSTGRES_PASSWORD=woof
     ports:
