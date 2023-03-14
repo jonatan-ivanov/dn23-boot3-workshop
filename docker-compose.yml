@@ -63,6 +63,26 @@ services:
     command: ['-config.file=/etc/loki/local-config.yaml']
     ports:
       - 3100:3100
+  toxiproxy:
+    container_name: toxiproxy
+    image: ghcr.io/shopify/toxiproxy:2.5.0
+    command: -host=0.0.0.0 -config /config/toxiproxy.json -proxy-metrics -runtime-metrics
+    depends_on:
+      - postgres
+    volumes:
+      - ./docker/toxiproxy:/config
+    ports:
+      - 8474:8474
+      - 5433:5433
+  toxiproxy-ui:
+    container_name: toxiproxy-ui
+    image: buckle/toxiproxy-frontend:0.10
+    environment:
+      TOXIPROXY_URL: http://host.docker.internal:8474
+    depends_on:
+      - toxiproxy
+    ports:
+      - 8484:8080
   # zipkin:
   #   container_name: zipkin
   #   image: openzipkin/zipkin:2.24
