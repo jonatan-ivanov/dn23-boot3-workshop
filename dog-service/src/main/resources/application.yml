@@ -1,4 +1,6 @@
 spring:
+  application:
+    name: dogservice
   datasource:
     url: "jdbc:postgresql://localhost:5432/dog-db"
     username: "dog"
