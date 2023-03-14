@@ -37,7 +37,7 @@ public class OwnerService {
 		return observation.observe(() -> {
 			Owner owner = this.ownerRepository.findByNameIgnoringCase(ownerName);
 			if (owner == null) {
-				throw new NoSuchDogOwner(ownerName);
+				throw new NoSuchDogOwnerException(ownerName);
 			}
 			return this.dogRepository.findByOwner(owner).stream().map(Dog::getName).toList();
 		});

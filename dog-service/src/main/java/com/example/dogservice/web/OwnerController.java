@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.dogservice.service.NoSuchDogOwner;
+import com.example.dogservice.service.NoSuchDogOwnerException;
 import com.example.dogservice.service.OwnerService;
 
 /**
@@ -30,7 +30,7 @@ public class OwnerController {
 	}
 
 	@ExceptionHandler
-	ProblemDetail onNoSuchDogOwner(NoSuchDogOwner ex) {
+	ProblemDetail onNoSuchDogOwner(NoSuchDogOwnerException ex) {
 		ProblemDetail details = ProblemDetail.forStatus(HttpStatus.NOT_FOUND);
 		details.setProperty("ownername", ex.getName());
 		return details;
