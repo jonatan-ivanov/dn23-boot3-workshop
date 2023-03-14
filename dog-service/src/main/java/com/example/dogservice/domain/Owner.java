@@ -14,7 +14,7 @@ public class Owner {
 
 	private String name;
 
-	Owner() {
+	protected Owner() {
 	}
 
 	public Owner(long id, String name) {

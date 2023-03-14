@@ -21,12 +21,12 @@ public class Dog {
 	@JoinColumn(foreignKey = @ForeignKey(name = "dog_owner_fkey"))
 	private Owner owner;
 
-	Dog() {
-	}
-
 	public Dog(long id, String name, Owner owner) {
 		this.id = id;
 		this.name = name;
+	}
+
+	protected Dog() {
 	}
 
 	public long getId() {
