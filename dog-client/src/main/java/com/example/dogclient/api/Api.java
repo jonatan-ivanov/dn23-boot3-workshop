@@ -1,4 +1,4 @@
-package com.example.dogclient;
+package com.example.dogclient.api;
 
 import java.util.List;
 
