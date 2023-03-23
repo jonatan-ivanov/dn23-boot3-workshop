@@ -39,6 +39,10 @@ management:
   endpoint:
     env:
       show-values: always
+  metrics:
+    tags:
+      application: ${spring.application.name}
+      org: ${spring.application.org}
 
 application:
   security:
