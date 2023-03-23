@@ -57,6 +57,13 @@ logging:
   level:
     org.springframework.web.servlet.DispatcherServlet: DEBUG
 
+jdbc:
+  datasource-proxy:
+    include-parameter-values: true
+    query:
+      enable-logging: true
+      log-level: INFO
+
 application:
   security:
     users:
