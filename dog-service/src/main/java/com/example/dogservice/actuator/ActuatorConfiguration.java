@@ -27,4 +27,15 @@ public class ActuatorConfiguration {
 		return context -> context.addLowCardinalityKeyValue(KeyValue.of("org", org));
 	}
 
+	@Bean
+	ObservationFilter tempoErrorFilter() {
+		// TODO: remove this once Tempo is fixed: https://github.com/grafana/tempo/issues/1916
+		return context -> {
+			if (context.getError() != null) {
+				context.addHighCardinalityKeyValue(KeyValue.of("error", "true"));
+				context.addHighCardinalityKeyValue(KeyValue.of("errorMessage", context.getError().getMessage()));
+			}
+			return context;
+		};
+	}
 }
