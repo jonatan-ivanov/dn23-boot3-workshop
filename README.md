@@ -1,10 +1,11 @@
 ## Workshop Setup
 This branch can be used to check that you have correctly installed everything that you need for the workshop.
 
-
-
 ### Java
 You will need Java 17 with GraalVM to run this workshop.
+
+> **NOTE**: For Windows Users, `Java` setup is [here](windows/README.md)
+
 Optionally, you can also use Java 8 with earlier parts of the workshop as long as you can switch to Java 17 easily.
 
 We recommend using SDKMAN! to manage installed Java versions, but you're free to use whatever you prefer as long as Java 17 is available.
@@ -169,6 +170,9 @@ We'll need to make some REST calls to our application.
 You can use whatever tool you like, but if you have no preference we recommend HTTPie.
 
 You can install it from https://httpie.io/
+
+
+> **NOTE**: For Windows User you can Installt the [Httpie Desktop](https://httpie.io/download)
 
 
 
