@@ -55,7 +55,9 @@ The following instructions can be used if you are using CHOCOLATEY!
 Check that you can use Java 8 and GraalVM 17
 
 1. Open `System Properties`
-2. Click `Environment Variables...` and change the `PATH` and `JAVA_HOME` System Variables to use the right JDK/GraalVM paths
+2. Click `Environment Variables...` and verify the `PATH` and `JAVA_HOME` System Variables to use the JDK 17/GraalVM paths.
+   You may notice the GraalVM is listed last in the path.
+   If so, move it up to the first position in the path.
 3. Open a new PowerShell window and check the Java version
 ```shell
 PS C:\> java -version
@@ -64,7 +66,14 @@ OpenJDK Runtime Environment GraalVM CE 22.3.1 (build 17.0.6+10-jvmci-22.3-b13)
 OpenJDK 64-Bit Server VM GraalVM CE 22.3.1 (build 17.0.6+10-jvmci-22.3-b13, mixed mode, sharing)
 ```
 
+If you are installing with CHOCOLATEY!,
+you may notice that `native-image` is not installed.
 
+You can install it from a Powershell as Administrator as follows:
+
+```shell
+gu.cmd install native-image
+```
 
 #### Without SDKMAN! or CHOCOLATEY!
 If you prefer not to use SKDMAN! or CHOCOLATEY! you can install Java and [GraalVM](https://github.com/graalvm/graalvm-ce-builds/releases) whichever way you're most comfortable.
@@ -95,8 +104,13 @@ $ gu install native-image
 ```
 
 > **NOTE**: On Windows, GraalVM installation contains the `gu.cmd` command. Depending on the terminal you use, it can be executed as just `gu` or `gu.cmd`.
+If you are running from a Powershell,
+run `gu.cmd`.
+If you are running from Git Bash or WSL,
+use `gu`.
 
-And check the version again:
+
+Check the version again:
 
 ```shell
 $ native-image --version
